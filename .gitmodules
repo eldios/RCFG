@@ -1,0 +1,3 @@
+[submodule "pycodicefiscale"]
+	path = pycodicefiscale
+	url = https://github.com/ema/pycodicefiscale.git
