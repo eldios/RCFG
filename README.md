@@ -5,6 +5,7 @@ RCFG : Random Codice Fiscale Generator
 ## Installation
 
 Requirements :
+
 1. Python 3.x
 2. PyCodiceFiscale library copied/cloned in directory $(PWD)/pycodicefiscale
 
@@ -16,6 +17,8 @@ usage: rcfg.py [-h] [-V] [-d] [-n FIRSTNAMES] [-l LASTNAMES] [-o OUTPUT]
 Random CodiceFiscale Generator - Generates a list of random fake Italian people along with their CF (Codice Fiscale, italian birth data ID) and output the result as a CSV
 
 optional arguments:
+
+```
   -h, --help            show this help message and exit
   -V, --version         show program's version number and exit
   -d, --debug           Enable debugging info
@@ -33,6 +36,7 @@ optional arguments:
   -c COUNT, --count COUNT
                         How many CF should be generated
   -q, --quiet           Only output CF without the related Person data
+```
 
 ## Contributing
 
