@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-version = '0.0.2'
+version = '0.0.3'
 author = """
 Emanuele 'Lele' Calo'
 Email:<lele [at] quasinormale [dot] it>
@@ -55,7 +55,7 @@ class City():
         self.province = province
 
     def __str__(self):
-        return "{}({})".format(self.name,self.province)
+        return "{} ({})".format(self.name,self.province)
 
     def __repr__(self):
         return str(self)
@@ -232,7 +232,7 @@ class Person():
     def __str__(self):
         """Convert to string"""
         if(not args.quiet):
-            return "{},{},{},{},{},{}".format(self.codfis,self.firstname,self.lastname,self.birthdate,self.gender,self.placeofbirth)
+            return "{},{},{},{},{},{},{}".format(self.codfis,self.firstname,self.lastname,self.birthdate,self.gender,self.placeofbirth.name,self.placeofbirth.province)
         else:
             return "{}".format(self.codfis)
 
@@ -243,7 +243,7 @@ class Person():
 def output_to_stdout():
     """Output result to STDOUT"""
     if(not args.quiet):
-        print("CF,firstname,lastname,birthdate,gender,placeofbirth")
+        print("CF,firstname,lastname,birthdate,gender,placeofbirthname,placeofbirthprovince")
     else:
         print("CF")
 
@@ -254,7 +254,7 @@ def output_to_file(output_file):
     """Output result to FILE"""
     with open(output_file,'w',encoding='UTF8') as f:
         if(not args.quiet):
-            f.write("CF,firstname,lastname,birthdate,gender,placeofbirth\n")
+            f.write("CF,firstname,lastname,birthdate,gender,placeofbirthname,placeofbirthprovince\n")
         else:
             f.write("CF\n")
     
