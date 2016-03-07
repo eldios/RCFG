@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-version = '0.0.3'
+version = '0.0.4'
 author = """
 Emanuele 'Lele' Calo'
 Email:<lele [at] quasinormale [dot] it>
@@ -35,6 +35,8 @@ parser.add_argument('-p','--cities', action='append',
                    help='*TODO* File containing a CSV list of cities (ID,Name,ProvinceCode). If not specified a list of random Italian cities will be used')
 parser.add_argument('-o','--output', action='store',
                     help='Output file used to store the resulting list of random CFs')
+parser.add_argument('-y','--years', action='store', type=int , default=120,
+                   help='Max past number of years to be used during birth date randomization starting from today and going back.')
 parser.add_argument('-c','--count', action='store', type=int , default=1,
                    help='How many CF should be generated')
 parser.add_argument('-q','--quiet', action='store_true',
@@ -219,7 +221,7 @@ class Person():
     def _random_birthdate(self):
         """Generate a random though plausible birth date"""
         today = datetime.date.today()
-        maxlifespan = 120 # I know, I'm optimist, but there it goes :)
+        maxlifespan = args.years # I know, I'm optimist, but there it goes :)
         stime = datetime.date(year = (today.year - maxlifespan), month=1, day=1)
         birthdatetimestamp = randint(stime.toordinal() , today.toordinal())
         return datetime.date.fromordinal(birthdatetimestamp)
