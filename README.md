@@ -49,6 +49,9 @@ optional arguments:
 ## History
 
 20160305 - 0.0.1 - Initial commit
+20160305 - 0.0.2 - Changed city representation
+20160307 - 0.0.3 - Fixed CF generation mistake, added max number of years to randomize birthdate
+20160308 - 0.0.4 - updated pycodicefiscale module
 
 ## Credits
 
